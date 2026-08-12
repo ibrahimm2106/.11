@@ -1,0 +1,115 @@
+/* Light Theme Styles */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f0f4c3, #dcedc8);
+    -fx-padding: 20px;
+}
+
+.main-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E7D32;
+    -fx-padding: 10px;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #388E3C);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66BB6A, #43A047);
+    -fx-cursor: hand;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header {
+    -fx-background-color: #E8F5E9;
+    -fx-text-fill: #2E7D32;
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: #2E7D32;
+    -fx-font-size: 16px;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.progress-bar {
+    -fx-accent: #66BB6A;
+    -fx-control-inner-background: #E8F5E9;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 5px;
+}
+
+.pie-chart {
+    -fx-pie-label-visible: true;
+    -fx-background-color: transparent;
+}
+
+.tab-pane {
+    -fx-background-color: white;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 5px;
+}
+
+.tab {
+    -fx-background-color: white;
+    -fx-text-fill: #2E7D32;
+    -fx-font-weight: bold;
+}
+
+.tab:selected,
+.tab:hover {
+    -fx-background-color: #E8F5E9;
+}
+
+.scroll-pane {
+    -fx-background-color: white;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 5px;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 5px;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+
+.tooltip {
+    -fx-background-color: #E8F5E9;
+    -fx-text-fill: #2E7D32;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 5px;
+}
