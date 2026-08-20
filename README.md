@@ -1,77 +1,154 @@
 # ZipAbout Rental Management System
 
-A Java/JavaFX rental management application developed as an individual university software-development project.
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)
+![JavaFX](https://img.shields.io/badge/JavaFX-Desktop_UI-2f74c0)
+![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apachemaven)
+![Build](https://github.com/ibrahimm2106/.11/actions/workflows/java-ci.yml/badge.svg)
 
-**Project mark: 75%**
+A Java/JavaFX desktop rental-management application developed as an individual university software-development project. The project achieved **75%** and demonstrates object-oriented programming, GUI development, design patterns, Java Streams, validation, localisation and accessibility-aware UI design.
 
-## Overview
+## Portfolio highlights
 
-ZipAbout allows users to rent lightweight transport and equipment through a desktop GUI. The project demonstrates object-oriented design, maintainable Java code, GUI development, design patterns, functional-style operations with Java Streams, validation, localisation, accessibility, and user-focused features.
+- Built a multi-screen **JavaFX** application using FXML and CSS.
+- Modelled users, bookable items and booking behaviour with **object-oriented design**.
+- Used a **Singleton** booking manager to coordinate shared application state.
+- Applied **Java Streams** for search, lookup, filtering and duplicate checks.
+- Added **Admin/User roles**, booking history and loyalty points.
+- Added **English/French localisation** with `ResourceBundle`.
+- Added light/dark themes, keyboard-accessible interactions and availability visualisation.
+- Packaged the project with **Maven** and added automated GitHub build checks.
 
-## Key Features
+## Skills demonstrated
 
-- JavaFX desktop interface using FXML and CSS
-- Rental and release workflow for bookable items
-- Availability/status tracking
-- User login and Admin/User roles
-- Loyalty points and booking history
-- Search and availability filtering
-- Java Streams for filtering, lookup, and duplicate checking
-- Singleton design pattern for centralised booking management
-- English/French localisation using `ResourceBundle`
-- Light/dark theme switching
-- Keyboard-accessible interactions
-- Pie-chart visualisation of booking availability
-- Input validation and error handling
+| Area | Evidence in the project |
+| --- | --- |
+| Java | Classes, collections, validation, event handling and business logic |
+| OOP | Encapsulation and separation between models, controller and booking logic |
+| JavaFX | FXML views, CSS styling, controls, charts and desktop interaction |
+| Functional Java | Stream-based filtering, lookup and duplicate checking |
+| Design patterns | Singleton `BookingManager` for centralised booking state |
+| UX | Search/filtering, role-aware workflows, theming and keyboard interaction |
+| Internationalisation | English/French resources via `ResourceBundle` |
+| Build tooling | Maven project configuration and JavaFX Maven plugin |
+| CI | GitHub Actions compilation on Windows and Ubuntu |
 
-## Technical Highlights
+## Core features
 
-### Object-Oriented Design
-The application separates:
-- `BookableItem` — rental item model
-- `User` — user information, roles, loyalty points, and booking history
-- `BookingManager` — shared booking/business logic
-- `HelloController` — JavaFX UI/controller behaviour
-- `HelloApplication` — application startup and resource loading
+### Rental workflow
+Users can browse available items, rent/release items and track availability/status changes.
 
-### Design Pattern
-`BookingManager` uses the **Singleton pattern** to maintain a single shared booking manager instance across the application.
+### User accounts and roles
+The application includes login behaviour with **Admin** and **User** roles, enabling role-aware functionality.
 
-### Java Streams
-Streams are used for duplicate checks, login lookup, availability filtering, and search operations.
+### Search and filtering
+Java Streams are used to support filtering, lookup and duplicate checking across application data.
 
-## Technologies
+### Loyalty and booking history
+Users can accumulate loyalty points and review booking history as part of the rental workflow.
 
-Java • JavaFX • FXML • CSS • Java Streams • ResourceBundle • Maven
+### Localisation and themes
+The interface supports English/French localisation and light/dark theme switching.
 
-## Project Structure
+### Accessibility and visual feedback
+The project includes keyboard-accessible interactions and a pie-chart view for booking availability.
 
-```text
-src/
-  main/
-    java/
-      com/example/sd3coursework/
-      models/
-      utils/
-    resources/
-      com/example/sd3coursework/
+## Architecture
+
+```mermaid
+flowchart LR
+    A[HelloApplication] --> B[FXML + CSS]
+    B --> C[HelloController]
+    C --> D[BookingManager]
+    D --> E[BookableItem]
+    D --> F[User]
+    C --> G[ResourceBundle]
+    G --> H[English / French UI]
 ```
 
-## Running the Project
+The code is organised around a JavaFX application layer, controller logic, shared booking/business logic and domain models. More detail is available in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-Requirements:
+## Project structure
+
+```text
+.
+├── pom.xml
+├── README.md
+├── .gitignore
+├── .github/
+│   └── workflows/
+│       └── java-ci.yml
+├── docs/
+│   └── ARCHITECTURE.md
+└── src/
+    └── main/
+        ├── java/
+        │   ├── com/example/sd3coursework/
+        │   ├── models/
+        │   ├── utils/
+        │   └── module-info.java
+        └── resources/
+            └── com/example/sd3coursework/
+```
+
+## Quick start
+
+### Requirements
+
 - JDK 21+
 - Maven 3.9+
 
+### Run with Maven
+
 ```bash
+git clone https://github.com/ibrahimm2106/.11.git
+cd .11
 mvn clean javafx:run
 ```
 
-## Academic Context
+### Build only
 
-This portfolio repository is based on my Software Development 3 coursework at the University of Roehampton. The project achieved **75%** and included advanced functionality beyond the basic GUI requirements, including design-pattern use, Java Streams/functional-style operations, additional user features, localisation, theming, and accessibility considerations.
+```bash
+mvn clean package
+```
+
+The GitHub Actions workflow also verifies that the Maven project compiles on Windows and Ubuntu.
+
+## Suggested demo flow
+
+1. Launch the application.
+2. Sign in using one of the available application roles.
+3. Search/filter the available rental items.
+4. Complete a rental/release action and inspect availability updates.
+5. Review user-facing features such as booking history, loyalty points, localisation and theme controls.
+
+## Engineering decisions
+
+<details>
+<summary><strong>Why use a Singleton booking manager?</strong></summary>
+
+The booking manager provides one shared point for booking-related state and operations across the application. This demonstrates deliberate use of a design pattern rather than placing business logic directly inside UI code.
+
+</details>
+
+<details>
+<summary><strong>Why use Java Streams?</strong></summary>
+
+Streams keep filtering and lookup behaviour concise and demonstrate functional-style operations for searching, duplicate checking and availability filtering.
+
+</details>
+
+<details>
+<summary><strong>Why separate FXML/CSS from Java logic?</strong></summary>
+
+The separation keeps presentation concerns away from domain and business logic, improving maintainability and making the JavaFX project easier to navigate.
+
+</details>
+
+## Academic context
+
+This portfolio repository is based on my **Software Development 3** coursework at the University of Roehampton. The project achieved **75%**. The repository is presented as evidence of the Java, JavaFX and software-design skills demonstrated by the implementation.
 
 ## Author
 
-Mohamed Ibrahim  
+**Mohamed Ibrahim**  
 BEng Software Engineering, University of Roehampton
